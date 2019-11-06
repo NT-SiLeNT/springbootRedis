@@ -27,24 +27,13 @@ public class StudentController {
     @Resource
     private IStudentService studentService;
 
-    /*@GetMapping("/selectall")
+    @GetMapping("/selectall")
     public Wrapper<List<Student>> selectAll(){
+        logger.info("进入方法 selectAll");
         List<Student> students = studentService.studenetList();
         Wrapper<List<Student>> wrapper = null;
         if (null!=students){
             wrapper = WrapMapper.wrap(200,"查询成功",students);
-        }else {
-            wrapper = WrapMapper.wrap(200,"查无数据");
-        }
-        return wrapper;
-    }*/
-
-    @GetMapping("/selectTwoDataBase")
-    public Wrapper<Map<String, Object>> selectTwoDataBase(){
-        Map<String, Object> map = studentService.selectTwoDataBase();
-        Wrapper<Map<String, Object>> wrapper = null;
-        if (null!=map){
-            wrapper = WrapMapper.wrap(200,"查询成功",map);
         }else {
             wrapper = WrapMapper.wrap(200,"查无数据");
         }
