@@ -2,6 +2,7 @@ package com.wx.springBoot.demo01.mapper;
 
 import com.wx.springBoot.demo01.model.pojo.Student;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -15,6 +16,10 @@ import java.util.List;
 @Component
 @Mapper
 public interface StudentMapper {
+
     List<Student> queryAll();
+
+    Student selectBySno(@Param("sno")String sno);
+
 }
 

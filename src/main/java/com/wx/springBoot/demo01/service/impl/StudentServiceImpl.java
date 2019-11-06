@@ -26,9 +26,17 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public List<Student> studenetList() {
-        logger.info("进入方法");
+        logger.info("进入方法studenetList");
         List<Student> students = studentMapper.queryAll();
         logger.info("查询结果条数："+students.size());
         return students;
+    }
+
+    @Override
+    public Student queryStudentBySno(String sno) {
+        logger.info("进入方法queryStudentBySno");
+        Student student = studentMapper.selectBySno(sno);
+        logger.info("学生"+student.toString());
+        return student;
     }
 }

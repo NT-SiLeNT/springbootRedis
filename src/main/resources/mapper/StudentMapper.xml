@@ -10,4 +10,9 @@
     <select id="queryAll" resultMap="BaseResultMap">
         select * from student
     </select>
+
+    <select id="selectBySno" resultMap="BaseResultMap">
+        SELECT * FROM STUDENT WHERE SNO = #{sno,jdbcType=VARCHAR}
+    </select>
+
 </mapper>

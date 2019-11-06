@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @author wangxin
@@ -22,7 +21,7 @@ import java.util.Map;
  */
 @RestController
 public class StudentController {
-    private static final Logger logger = LogManager.getLogger(StudentServiceImpl.class);
+    private static final Logger logger = LogManager.getLogger(StudentController.class);
 
     @Resource
     private IStudentService studentService;

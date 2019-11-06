@@ -13,5 +13,8 @@ import java.util.Map;
  * @date 2019-10-29 10:53
  */
 public interface IStudentService {
+
     List<Student> studenetList();
+
+    Student queryStudentBySno(String sno);
 }
