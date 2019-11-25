@@ -2,6 +2,7 @@ package com.wx.springBoot.demo01;
 
 import com.wx.springBoot.demo01.model.pojo.Student;
 import com.wx.springBoot.demo01.service.IStudentService;
+import com.wx.springBoot.demo01.service.StudentService;
 import com.wx.springBoot.demo01.web.controller.StudentController;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -18,6 +19,8 @@ public class Demo01ApplicationTests {
 
 	@Autowired
 	private IStudentService studentService;
+	@Autowired
+    private StudentService stuService;
 
 	@Test
 	public void contextLoads() {
@@ -31,4 +34,25 @@ public class Demo01ApplicationTests {
 		Student student2 = studentService.queryStudentBySno("001");
 		logger.info("学号" + student2.getSno() + "的学生姓名为：" + student2.getName());
 	}
+
+    @Test
+    public void test1() throws Exception {
+        Student student1 = this.stuService.queryStudentBySno("001");
+        logger.info("学号" + student1.getSno() + "的学生姓名为：" + student1.getName());
+
+        Student student2 = this.stuService.queryStudentBySno("001");
+        logger.info("学号" + student2.getSno() + "的学生姓名为：" + student2.getName());
+    }
+
+    @Test
+    public void test2() throws Exception {
+        Student student1 = this.stuService.queryStudentBySno("001");
+        logger.info("学号" + student1.getSno() + "的学生姓名为：" + student1.getName());
+
+        student1.setName("康康");
+        stuService.update(student1);
+
+        Student student2 = this.stuService.queryStudentBySno("001");
+        logger.info("学号" + student2.getSno() + "的学生姓名为：" + student2.getName());
+    }
 }
